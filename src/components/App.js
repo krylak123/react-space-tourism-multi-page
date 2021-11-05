@@ -1,9 +1,16 @@
 import React from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 
-const App = () => (
-  <div>
-    <p>React App</p>
-  </div>
-);
+const App = () => {
+  console.log('work');
+
+  return (
+    <Router>
+      <div>
+        <p>React App</p>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
