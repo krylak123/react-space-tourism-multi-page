@@ -62,6 +62,10 @@
         "devDependencies": false
       }
     ],
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ]
   }
 }

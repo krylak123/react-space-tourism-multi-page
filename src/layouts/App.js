@@ -1,14 +1,14 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 
-import Navigation from './Navigation';
+import Content from './Content/Content';
 
 const App = () => {
   console.log('work');
 
   return (
     <Router>
-      <Navigation />
+      <Content />
     </Router>
   );
 };
