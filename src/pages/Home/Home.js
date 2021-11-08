@@ -9,18 +9,20 @@ const Home = () => {
 
   return (
     <main className={classNames('home')}>
-      <div className={classNames('home__text-wrapper')}>
-        <p className={classNames('home__heading-1')}>so, you want to travel to</p>
-        <h1 className={classNames('home__heading-2')}>space</h1>
-        <p className={classNames('home__heading-3')}>
-          Let’s face it; if you want to go to space, you might as well genuinely go to outer space
-          and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a
-          truly out of this world experience!
-        </p>
+      <div className={classNames('home__wrapper')}>
+        <div className={classNames('home__text-wrapper')}>
+          <p className={classNames('home__heading-1')}>so, you want to travel to</p>
+          <h1 className={classNames('home__heading-2')}>space</h1>
+          <p className={classNames('home__heading-3')}>
+            Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+            and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you
+            a truly out of this world experience!
+          </p>
+        </div>
+        <button type="button" className={classNames('home__btn')}>
+          explore
+        </button>
       </div>
-      <button type="button" className={classNames('home__btn')}>
-        explore
-      </button>
     </main>
   );
 };

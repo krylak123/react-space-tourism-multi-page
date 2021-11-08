@@ -1,10 +1,4 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding-top: 15vh;
-  height: 100vh;
   background-image: url('../../assets/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,6 +6,17 @@
 
   &__text-wrapper {
     text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 15vh;
+    height: 100vh;
+    max-width: 1440px;
   }
 
   &__heading-1 {
@@ -59,8 +64,10 @@
   }
 
   @media (orientation: landscape) {
-    flex-direction: row;
-    justify-content: space-evenly;
+    &__wrapper {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
 
     &__text-wrapper {
       flex-basis: 50%;
@@ -160,8 +167,11 @@
   }
 
   @media (min-width: 1024px) {
-    justify-content: space-between;
     background-image: url('../../assets/home/background-home-desktop.jpg');
+
+    &__wrapper {
+      justify-content: space-between;
+    }
 
     &__text-wrapper {
       flex-basis: 40%;
