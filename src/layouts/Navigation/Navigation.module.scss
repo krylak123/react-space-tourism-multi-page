@@ -2,13 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(100%);
   width: 100%;
   height: 100vh;
-  transition: 0.3s;
+  visibility: hidden;
 
   &--active {
-    transform: translateX(0);
+    visibility: visible;
   }
 
   &__toggler-container {
@@ -71,6 +70,8 @@
     transform: translateX(0);
     width: auto;
     height: auto;
+    opacity: 1;
+    visibility: visible;
 
     &__toggler-container {
       display: none;
@@ -140,6 +141,8 @@
     transform: translateX(0);
     width: auto;
     height: auto;
+    opacity: 1;
+    visibility: visible;
 
     &__toggler-container {
       display: none;
