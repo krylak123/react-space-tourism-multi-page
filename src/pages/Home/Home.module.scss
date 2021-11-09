@@ -44,7 +44,9 @@
   }
 
   &__btn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 150px;
     outline-style: none;
@@ -53,6 +55,8 @@
     font-family: var(--font-family-primary);
     font-size: 2.3rem;
     text-transform: uppercase;
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
     background-color: var(--color-white);
     transition: 0.2s;
     cursor: pointer;

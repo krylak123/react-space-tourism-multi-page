@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import gsap from 'gsap';
 
@@ -32,9 +33,9 @@ const Home = () => {
             a truly out of this world experience!
           </p>
         </div>
-        <button type="button" className={classNames('home__btn')}>
+        <Link to="/destination" className={classNames('home__btn')}>
           explore
-        </button>
+        </Link>
       </div>
     </main>
   );
