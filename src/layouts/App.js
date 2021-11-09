@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 
+import Header from './Header/Header';
 import Content from './Content/Content';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
 
   return (
     <Router>
+      <Header />
       <Content />
     </Router>
   );
