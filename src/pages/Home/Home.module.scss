@@ -1,61 +1,60 @@
 .home {
+  padding: 100px 10px 30px;
+  height: 100vh;
   background-image: url('../../assets/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
-
-  &__text-wrapper {
-    text-align: center;
-  }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding-top: 15vh;
-    height: 100vh;
     max-width: 1440px;
+    height: 100%;
+  }
+
+  &__text-wrapper {
+    text-align: center;
+    color: var(--color-light);
   }
 
   &__heading-1 {
     margin-bottom: 20px;
     font-family: var(--font-family-secondary);
-    font-size: 1.3rem;
-    letter-spacing: 4px;
+    font-size: 2rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   &__heading-2 {
     margin-bottom: 20px;
-    font-size: 8rem;
+    font-size: 7.5rem;
     font-weight: normal;
     text-transform: uppercase;
+    color: var(--color-white);
   }
 
   &__heading-3 {
-    margin-bottom: 15vh;
-    padding: 0 10px;
     font-family: var(--font-family-secondary);
-    font-size: 1.2rem;
-    line-height: 135%;
-    letter-spacing: 2px;
-    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 150%;
+    letter-spacing: 1px;
   }
 
   &__btn {
-    margin-bottom: 50px;
+    display: block;
     width: 150px;
     height: 150px;
-    font-family: var(--font-family-primary);
-    font-size: 2rem;
-    text-transform: uppercase;
     outline-style: none;
     border-style: none;
     border-radius: 50%;
+    font-family: var(--font-family-primary);
+    font-size: 2.3rem;
+    text-transform: uppercase;
     background-color: var(--color-white);
-    transition: 0.3s;
+    transition: 0.2s;
     cursor: pointer;
 
     &:hover {
@@ -64,80 +63,50 @@
   }
 
   @media (orientation: landscape) {
+    padding: 70px 10px 0;
+
     &__wrapper {
       flex-direction: row;
-      justify-content: space-evenly;
     }
 
     &__text-wrapper {
-      flex-basis: 50%;
-      text-align: left;
+      flex-basis: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     &__heading-1 {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     &__heading-2 {
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
 
     &__heading-3 {
-      margin-bottom: 0;
-      padding: 0;
+      font-family: var(--font-family-secondary);
+      font-size: 1.5rem;
+      line-height: 150%;
+      letter-spacing: 1px;
     }
 
     &__btn {
-      align-self: flex-end;
+      margin-right: 30px;
     }
   }
 
-  @media (min-width: 360px) {
-    &__heading-1 {
-      margin-bottom: 25px;
-    }
-
-    &__heading-2 {
-      margin-bottom: 25px;
-    }
-
-    &__heading-3 {
-      margin-bottom: 15vh;
-      padding: 0 20px;
-    }
-
-    &__btn {
-      width: 180px;
-      height: 180px;
-    }
-  }
-
-  @media (min-width: 360px) and (orientation: landscape) {
-    &__heading-1 {
-      margin-bottom: 15px;
-    }
-
-    &__heading-2 {
-      margin-bottom: 15px;
-    }
-
-    &__heading-3 {
-      margin-bottom: 0;
-      padding: 0;
-    }
-  }
-
-  @media (min-width: 460px) {
+  @media (min-width: 720px) {
+    padding: 200px 10px 50px;
     background-image: url('../../assets/home/background-home-tablet.jpg');
-  }
 
-  @media (min-width: 760px) {
     &__text-wrapper {
-      padding: 0 15%;
+      width: 60%;
     }
 
     &__heading-1 {
       font-size: 2.5rem;
+      letter-spacing: 2px;
     }
 
     &__heading-2 {
@@ -145,66 +114,137 @@
     }
 
     &__heading-3 {
-      padding: 0;
-      font-size: 2rem;
+      font-size: 1.7rem;
+      line-height: 175%;
     }
 
     &__btn {
-      width: 242px;
-      height: 242px;
-      font-size: 3.5rem;
+      width: 250px;
+      height: 250px;
+      font-size: 4rem;
+
+      &:hover {
+        box-shadow: 0 0 0 100px hsla(230, 5%, 22%, 0.5);
+      }
     }
   }
 
-  @media (min-width: 760px) and (orientation: landscape) {
-    &__text-wrapper {
-      padding: 0;
+  @media (min-width: 720px) and (orientation: landscape) {
+    padding: 100px 10px 30px;
+
+    &__heading-1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    &__heading-2 {
+      font-size: 10rem;
+    }
+
+    &__heading-3 {
+      font-size: 1.5rem;
+      line-height: 150%;
     }
 
     &__btn {
-      margin-bottom: 140px;
+      width: 200px;
+      height: 200px;
+      font-size: 3rem;
+
+      &:hover {
+        box-shadow: 0 0 0 40px hsla(230, 5%, 22%, 0.5);
+      }
     }
   }
 
   @media (min-width: 1024px) {
+    padding: 300px 10px 80px;
     background-image: url('../../assets/home/background-home-desktop.jpg');
 
-    &__wrapper {
-      justify-content: space-between;
-    }
-
-    &__text-wrapper {
-      flex-basis: 40%;
-      margin-left: 10%;
-    }
-
     &__heading-1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
+      letter-spacing: 3px;
     }
 
     &__heading-2 {
-      font-size: 17rem;
+      font-size: 20rem;
     }
 
     &__heading-3 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      line-height: 175%;
     }
 
     &__btn {
-      margin-right: 10%;
-      width: 260px;
-      height: 260px;
-      font-size: 4rem;
+      width: 350px;
+      height: 350px;
+      font-size: 6rem;
     }
   }
 
   @media (min-width: 1024px) and (orientation: landscape) {
-    &__text-wrapper {
-      padding: 0;
+    padding: 200px 10px 80px;
+
+    &__heading-1 {
+      font-size: 3rem;
+    }
+
+    &__heading-2 {
+      font-size: 15rem;
+    }
+
+    &__heading-3 {
+      font-size: 2rem;
+      line-height: 150%;
     }
 
     &__btn {
-      margin-bottom: 200px;
+      width: 300px;
+      height: 300px;
+      font-size: 5rem;
+
+      &:hover {
+        box-shadow: 0 0 0 80px hsla(230, 5%, 22%, 0.5);
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 300px 10px 80px;
+
+    &__text-wrapper {
+      text-align: left;
+      flex-basis: 30%;
+    }
+
+    &__heading-1 {
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+    }
+
+    &__heading-2 {
+      font-size: 20rem;
+    }
+
+    &__heading-3 {
+      font-size: 2.5rem;
+      line-height: 175%;
+    }
+
+    &__btn {
+      width: 350px;
+      height: 350px;
+      font-size: 6rem;
+
+      &:hover {
+        box-shadow: 0 0 0 100px hsla(230, 5%, 22%, 0.5);
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &__wrapper {
+      padding: 0 100px;
     }
   }
 }
