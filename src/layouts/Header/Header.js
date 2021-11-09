@@ -24,11 +24,7 @@ const Header = () => {
   useEffect(() => {
     vpOrientLand.addEventListener('change', () => setIsMenuOpen(false));
 
-    gsap.fromTo(
-      logoRef.current,
-      { scale: '0' },
-      { scale: '1', rotate: '+=360', duration: 1, delay: 0.5, ease: 'back.out(1.7)' },
-    );
+    gsap.to(logoRef.current, { rotate: '+=360', duration: 1, delay: 0.5 });
   }, []);
 
   return (
