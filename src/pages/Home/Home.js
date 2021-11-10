@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
 import gsap from 'gsap';
 
 // eslint-disable-next-line no-unused-vars
@@ -18,22 +17,22 @@ const Home = () => {
   }, []);
 
   return (
-    <main className={classNames('home')}>
-      <div className={classNames('wrapper home__wrapper')}>
-        <div className={classNames('home__text-wrapper')}>
-          <p ref={heading1Ref} className={classNames('home__heading-1')}>
+    <main className="home">
+      <div className="wrapper home__wrapper">
+        <div className="home__text-wrapper">
+          <p ref={heading1Ref} className="home__heading-1">
             so, you want to travel to
           </p>
-          <h1 ref={heading2Ref} className={classNames('home__heading-2')}>
+          <h1 ref={heading2Ref} className="home__heading-2">
             space
           </h1>
-          <p ref={heading3Ref} className={classNames('home__heading-3')}>
+          <p ref={heading3Ref} className="home__heading-3">
             Let’s face it; if you want to go to space, you might as well genuinely go to outer space
             and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you
             a truly out of this world experience!
           </p>
         </div>
-        <Link to="/destination" className={classNames('home__btn')}>
+        <Link to="/destination" className="home__btn">
           explore
         </Link>
       </div>

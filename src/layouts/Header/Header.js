@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
 import gsap from 'gsap';
 
 import Navigation from '../Navigation/Navigation';
@@ -28,17 +27,13 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={classNames('header')}>
-      <div className={classNames('header__logo-container')}>
-        <img ref={logoRef} className={classNames('header__logo')} src={Logo} alt="logo icon" />
+    <header className="header">
+      <div className="header__logo-container">
+        <img ref={logoRef} className="header__logo" src={Logo} alt="logo icon" />
       </div>
       <Navigation toggler={handleOnToggleMenu} isOpen={isMenuOpen} />
-      <button
-        type="button"
-        className={classNames('header__toggler-container')}
-        onClick={handleOnToggleMenu}
-      >
-        <img className={classNames('header__toggler')} src={OpenMenu} alt="toggler icon" />
+      <button type="button" className="header__toggler-container" onClick={handleOnToggleMenu}>
+        <img className="header__toggler" src={OpenMenu} alt="toggler icon" />
       </button>
     </header>
   );

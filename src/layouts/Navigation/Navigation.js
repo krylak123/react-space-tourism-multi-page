@@ -35,11 +35,11 @@ const menuListItems = [
 
 const Navigation = ({ toggler, isOpen }) => {
   const menuListItemsMap = menuListItems.map(item => (
-    <li key={item.id} className={classNames('menu__list-item')}>
+    <li key={item.id} className="menu__list-item">
       <NavLink
         exact
         to={item.path}
-        className={classNames('menu__list-link')}
+        className="menu__list-link"
         activeClassName="menu__list-link--active"
         onClick={toggler}
       >
@@ -56,12 +56,12 @@ const Navigation = ({ toggler, isOpen }) => {
     <nav onClick={handleOnClickOutOfNav} className={classNames('menu', { 'menu--active': isOpen })}>
       <button
         type="button"
-        className={classNames('header__toggler-container menu__toggler-container')}
+        className="header__toggler-container menu__toggler-container"
         onClick={toggler}
       >
-        <img className={classNames('header__toggler')} src={CloseOpen} alt="toggler icon" />
+        <img className="header__toggler" src={CloseOpen} alt="toggler icon" />
       </button>
-      <ul className={classNames('menu__list')}>{menuListItemsMap}</ul>
+      <ul className="menu__list">{menuListItemsMap}</ul>
     </nav>
   );
 };
