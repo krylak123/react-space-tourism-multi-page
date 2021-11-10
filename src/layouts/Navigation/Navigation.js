@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
@@ -16,7 +18,7 @@ const menuListItems = [
   },
   {
     id: 1,
-    path: '/destination',
+    path: '/destination/moon',
     name: '01 destination',
   },
   {
@@ -46,8 +48,12 @@ const Navigation = ({ toggler, isOpen }) => {
     </li>
   ));
 
+  const handleOnClickOutOfNav = e => {
+    if (e.target.tagName === 'NAV') toggler();
+  };
+
   return (
-    <nav className={classNames('menu', { 'menu--active': isOpen })}>
+    <nav onClick={handleOnClickOutOfNav} className={classNames('menu', { 'menu--active': isOpen })}>
       <button
         type="button"
         className={classNames('header__toggler-container menu__toggler-container')}
