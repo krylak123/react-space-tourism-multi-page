@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <main className={classNames('home')}>
-      <div className={classNames('home__wrapper')}>
+      <div className={classNames('wrapper home__wrapper')}>
         <div className={classNames('home__text-wrapper')}>
           <p ref={heading1Ref} className={classNames('home__heading-1')}>
             so, you want to travel to
