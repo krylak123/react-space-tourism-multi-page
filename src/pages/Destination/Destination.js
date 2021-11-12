@@ -52,7 +52,7 @@ const destinationData = [
 const Destination = ({ planet }) => {
   const planetName = planet.match.params.planet;
 
-  const currentPlanet = destinationData.filter(item => item.name === planetName);
+  const currentPlanet = destinationData.find(item => item.name === planetName);
 
   const menuListItemsMap = destinationData.map(item => (
     <li key={item.id} className="destination__menu-item">
@@ -69,30 +69,30 @@ const Destination = ({ planet }) => {
 
   return (
     <>
-      {!currentPlanet.length ? (
+      {!currentPlanet ? (
         <Redirect to="/" />
       ) : (
         <main className="destination">
           <div className="wrapper destination__wrapper">
             <h1 className="destination__title">Pick your destination</h1>
             <div className="destination__img-container">
-              <img src={currentPlanet[0].image} alt="planet" className="destination__img" />
+              <img src={currentPlanet.image} alt="planet" className="destination__img" />
             </div>
             <div className="destination__details-container">
               <nav className="destination__menu">
                 <ul className="destination__menu-list">{menuListItemsMap}</ul>
               </nav>
-              <h2 className="destination__planet-name">{currentPlanet[0].name}</h2>
-              <p className="destination__planet-desc">{currentPlanet[0].desc}</p>
+              <h2 className="destination__planet-name">{currentPlanet.name}</h2>
+              <p className="destination__planet-desc">{currentPlanet.desc}</p>
               <span className="destination__line" />
               <div className="destination__values-container">
                 <div className="destination__value-container">
                   <p className="destination__planet-detail">avg. ditance</p>
-                  <p className="destination__planet-value">{currentPlanet[0].distance}</p>
+                  <p className="destination__planet-value">{currentPlanet.distance}</p>
                 </div>
                 <div className="destination__value-container">
                   <p className="destination__planet-detail">est. travel time</p>
-                  <p className="destination__planet-value">{currentPlanet[0].travel}</p>
+                  <p className="destination__planet-value">{currentPlanet.travel}</p>
                 </div>
               </div>
             </div>
