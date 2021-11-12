@@ -1,0 +1,353 @@
+.crew {
+  padding: 80px 10px 30px;
+  height: 100vh;
+  background-image: url('../../assets/crew/background-crew-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: var(--font-family-secondary);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &::before {
+      content: '02';
+      margin-right: 10px;
+      color: #64666d;
+    }
+  }
+
+  &__img-container {
+    flex-basis: 40%;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: hsla(0, 0%, 100%, 0.2);
+  }
+
+  &__details-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__slider {
+    width: 100%;
+  }
+
+  &__slider-list {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+  }
+
+  &__slider-item {
+    margin-right: 15px;
+    padding: 2px;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__slider-btn {
+    display: block;
+    width: 10px;
+    height: 10px;
+    outline-style: none;
+    border-style: none;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    cursor: pointer;
+
+    &--active {
+      background-color: var(--color-white);
+    }
+  }
+
+  &__text-container {
+    text-align: center;
+  }
+
+  &__role {
+    margin-bottom: 5px;
+    font-size: 2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: hsla(0, 0%, 100%, 0.4);
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  &__bio {
+    font-family: var(--font-family-secondary);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--color-light);
+  }
+
+  @media (orientation: landscape) {
+    padding: 80px 10px 0;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 40%;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        'title image'
+        'details image';
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__img-container {
+      grid-area: image;
+      justify-self: center;
+      height: 100%;
+    }
+
+    &__img {
+      height: auto;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    &__line {
+      display: none;
+    }
+
+    &__details-container {
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &__slider {
+      order: 1;
+    }
+
+    &__slider-list {
+      margin: 10px 0;
+    }
+
+    &__text-container {
+      width: 100%;
+      text-align: left;
+    }
+
+    &__role {
+      margin-bottom: 5px;
+      font-size: 1.5rem;
+    }
+
+    &__name {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    &__bio {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 720px) {
+    padding: 150px 10px 0;
+    background-image: url('../../assets/crew/background-crew-tablet.jpg');
+
+    &__title {
+      margin-bottom: 70px;
+      align-self: flex-start;
+      font-size: 3rem;
+    }
+
+    &__img-container {
+      order: 1;
+      flex-basis: 50%;
+    }
+
+    &__line {
+      display: none;
+    }
+
+    &__details-container {
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    &__slider {
+      order: 1;
+      margin-bottom: 50px;
+    }
+
+    &__slider-btn {
+      width: 15px;
+      height: 15px;
+    }
+
+    &__text-container {
+      width: 70%;
+    }
+
+    &__role {
+      margin-bottom: 10px;
+      font-size: 3rem;
+    }
+
+    &__name {
+      margin-bottom: 20px;
+      font-size: 4rem;
+    }
+
+    &__bio {
+      font-size: 2em;
+      line-height: 150%;
+    }
+  }
+
+  @media (min-width: 720px) and (orientation: landscape) {
+    padding: 100px 10px 0;
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    &__slider {
+      margin-bottom: 0;
+    }
+
+    &__slider-btn {
+      width: 12px;
+      height: 12px;
+    }
+
+    &__text-container {
+      width: 100%;
+    }
+
+    &__role {
+      margin-bottom: 5px;
+      font-size: 2rem;
+    }
+
+    &__name {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    &__bio {
+      font-size: 1.7em;
+      line-height: 150%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 250px 10px 0;
+    background-image: url('../../assets/crew/background-crew-desktop.jpg');
+
+    &__slider-item {
+      margin-right: 40px;
+    }
+
+    &__slider-btn {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__role {
+      margin-bottom: 20px;
+      font-size: 4rem;
+    }
+
+    &__name {
+      margin-bottom: 30px;
+      font-size: 6rem;
+    }
+
+    &__bio {
+      font-size: 3em;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (min-width: 1024px) and (orientation: landscape) {
+    padding: 200px 10px 0;
+
+    &__wrapper {
+      grid-template-columns: 1fr 50%;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+
+    &__text-container {
+      width: 100%;
+    }
+
+    &__role {
+      margin-bottom: 10px;
+      font-size: 3rem;
+    }
+
+    &__name {
+      margin-bottom: 20px;
+      font-size: 5rem;
+    }
+
+    &__bio {
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 200px 10px 0;
+
+    &__text-container {
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    &__role {
+      margin-bottom: 20px;
+      font-size: 4rem;
+    }
+
+    &__name {
+      margin-bottom: 30px;
+      font-size: 6rem;
+    }
+
+    &__bio {
+      font-size: 4rem;
+    }
+  }
+}
