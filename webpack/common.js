@@ -29,7 +29,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       inject: 'body',
-      title: 'Page Title',
+      title: 'Space Tourism',
     }),
     new FaviconsWebpackPlugin({
       logo: './public/favicon.png',
