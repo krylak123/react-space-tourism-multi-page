@@ -1,0 +1,384 @@
+.tech {
+  padding: 80px 0 30px;
+  height: 100vh;
+  background-image: url('../../assets/technology/background-technology-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: var(--font-family-secondary);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &::before {
+      content: '03';
+      margin-right: 10px;
+      color: #64666d;
+    }
+  }
+
+  &__img-container {
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__info-container {
+    width: 100%;
+  }
+
+  &__menu {
+    margin: 20px 0;
+  }
+
+  &__menu-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  &__menu-item {
+    list-style: none;
+  }
+
+  &__menu-btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-family: var(--font-family-secondary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-white);
+    outline-style: none;
+    border-radius: 50%;
+    border: 1px solid hsla(0, 0%, 100%, 0.4);
+    background-color: transparent;
+    cursor: pointer;
+
+    &--active {
+      color: hsl(0, 0%, 0%);
+      background-color: var(--color-white);
+    }
+  }
+
+  &__text-container {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    font-family: var(--font-family-secondary);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--color-light);
+    line-height: 150%;
+  }
+
+  @media (orientation: landscape) {
+    padding: 70px 10px 0;
+
+    &__wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__title {
+      flex-basis: 100%;
+      margin-bottom: 10px;
+    }
+
+    &__img-container {
+      order: 1;
+      flex-basis: 40%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 60%;
+    }
+
+    &__img {
+      width: auto;
+      height: 100%;
+    }
+
+    &__info-container {
+      flex-basis: 60%;
+      display: flex;
+    }
+
+    &__menu {
+      margin: 0;
+    }
+
+    &__menu-list {
+      flex-direction: column;
+      justify-content: space-between;
+      width: auto;
+      height: 100%;
+    }
+
+    &__menu-btn {
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+    }
+
+    &__text-container {
+      padding: 0 10px;
+      text-align: left;
+    }
+
+    &__subtitle {
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+
+    &__name {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    &__desc {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (min-width: 720px) {
+    padding: 150px 0 50px;
+    background-image: url('../../assets/technology/background-technology-tablet.jpg');
+
+    &__title {
+      margin-bottom: 70px;
+      align-self: flex-start;
+      font-size: 3rem;
+    }
+
+    &__menu {
+      margin: 40px 0;
+    }
+
+    &__menu-list {
+      width: 50%;
+    }
+
+    &__menu-btn {
+      width: 60px;
+      height: 60px;
+      font-size: 2rem;
+    }
+
+    &__text-container {
+      padding: 0 100px;
+    }
+
+    &__subtitle {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    &__name {
+      margin-bottom: 30px;
+      font-size: 4rem;
+    }
+
+    &__desc {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 720px) and (orientation: landscape) {
+    padding: 90px 10px 0;
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    &__img-container {
+      height: 75%;
+    }
+
+    &__menu {
+      margin: 0;
+    }
+
+    &__menu-list {
+      width: auto;
+    }
+
+    &__menu-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+
+    &__text-container {
+      padding: 0 10px;
+    }
+
+    &__subtitle {
+      margin-bottom: 1px;
+      font-size: 1.5rem;
+    }
+
+    &__name {
+      margin-bottom: 20px;
+      font-size: 3rem;
+    }
+
+    &__desc {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 250px 0 80px;
+    background-image: url('../../assets/technology/background-technology-desktop.jpg');
+
+    &__title {
+      margin-left: 20px;
+    }
+
+    &__menu {
+      margin: 60px 0;
+    }
+
+    &__menu-list {
+      width: 50%;
+    }
+
+    &__menu-btn {
+      width: 80px;
+      height: 80px;
+      font-size: 3rem;
+    }
+
+    &__text-container {
+      padding: 0 200px;
+    }
+
+    &__subtitle {
+      margin-bottom: 20px;
+      font-size: 2.3rem;
+    }
+
+    &__name {
+      margin-bottom: 40px;
+      font-size: 6rem;
+    }
+
+    &__desc {
+      font-size: 2.1rem;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (min-width: 1024px) and (orientation: landscape) {
+    padding: 200px 10px 0;
+
+    &__title {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+
+    &__img-container {
+      flex-basis: 45%;
+      height: 80%;
+    }
+
+    &__info-container {
+      flex-basis: 55%;
+    }
+
+    &__menu {
+      margin: 0;
+    }
+
+    &__menu-list {
+      width: auto;
+    }
+
+    &__menu-btn {
+      width: 60px;
+      height: 60px;
+      font-size: 2.5rem;
+    }
+
+    &__text-container {
+      padding: 0 20px;
+    }
+
+    &__subtitle {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    &__name {
+      margin-bottom: 30px;
+      font-size: 5rem;
+    }
+
+    &__desc {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 200px 10px 30px;
+
+    &__menu-btn {
+      width: 80px;
+      height: 80px;
+      font-size: 3rem;
+    }
+
+    &__img-container {
+      height: 90%;
+    }
+
+    &__text-container {
+      padding: 0 30px;
+    }
+
+    &__subtitle {
+      margin-bottom: 20px;
+      font-size: 3rem;
+    }
+
+    &__name {
+      margin-bottom: 40px;
+      font-size: 6rem;
+    }
+
+    &__desc {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+  }
+}
