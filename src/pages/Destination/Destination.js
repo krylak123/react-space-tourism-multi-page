@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router';
-import { NavLink } from 'react-router-dom';
+
+import NavLinkItem from '../../components/NavLinkItem';
 
 import PhotoMoon from '../../assets/destination/image-moon.png';
 import PhotoMars from '../../assets/destination/image-mars.png';
@@ -55,16 +56,13 @@ const Destination = ({ planet }) => {
   const currentPlanet = destinationData.find(item => item.name === planetName);
 
   const menuListItemsMap = destinationData.map(item => (
-    <li key={item.id} className="destination__menu-item">
-      <NavLink
-        exact
-        to={item.path}
-        activeClassName="destination__menu-link--active"
-        className="destination__menu-link"
-      >
-        {item.name}
-      </NavLink>
-    </li>
+    <NavLinkItem
+      key={item.id}
+      path={item.path}
+      name={item.name}
+      classItem="destination__menu-item"
+      classLink="destination__menu-link"
+    />
   ));
 
   return (

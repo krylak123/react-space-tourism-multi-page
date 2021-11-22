@@ -2,8 +2,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
+
+import NavLinkItem from '../../components/NavLinkItem';
 
 import CloseOpen from '../../assets/shared/icon-close.svg';
 
@@ -34,17 +35,14 @@ const menuListItems = [
 
 const Navigation = ({ toggler, isOpen }) => {
   const menuListItemsMap = menuListItems.map(item => (
-    <li key={item.id} className="menu__list-item">
-      <NavLink
-        exact
-        to={item.path}
-        className="menu__list-link"
-        activeClassName="menu__list-link--active"
-        onClick={toggler}
-      >
-        {item.name}
-      </NavLink>
-    </li>
+    <NavLinkItem
+      key={item.id}
+      path={item.path}
+      name={item.name}
+      toggler={toggler}
+      classItem="menu__list-item"
+      classLink="menu__list-link"
+    />
   ));
 
   const handleOnClickOutOfNav = e => {
