@@ -9065,6 +9065,39 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
 var classnames = __webpack_require__(184);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+;// CONCATENATED MODULE: ./src/components/NavLinkItem.js
+
+
+
+
+var NavLinkItem = function NavLinkItem(_ref) {
+  var path = _ref.path,
+      name = _ref.name,
+      classItem = _ref.classItem,
+      classLink = _ref.classLink,
+      toggler = _ref.toggler;
+  return /*#__PURE__*/react.createElement("li", {
+    className: classItem
+  }, /*#__PURE__*/react.createElement(NavLink, {
+    exact: true,
+    to: path,
+    className: classLink,
+    activeClassName: "".concat(classLink, "--active"),
+    onClick: toggler
+  }, name));
+};
+
+NavLinkItem.propTypes = {
+  path: (prop_types_default()).string.isRequired,
+  name: (prop_types_default()).string.isRequired,
+  classItem: (prop_types_default()).string.isRequired,
+  classLink: (prop_types_default()).string.isRequired,
+  toggler: (prop_types_default()).func
+};
+NavLinkItem.defaultProps = {
+  toggler: null
+};
+/* harmony default export */ var components_NavLinkItem = (NavLinkItem);
 // EXTERNAL MODULE: ./src/assets/shared/icon-close.svg
 var icon_close = __webpack_require__(643);
 ;// CONCATENATED MODULE: ./src/layouts/Navigation/Navigation.module.scss
@@ -9078,7 +9111,6 @@ var icon_close = __webpack_require__(643);
 
 
 
- // eslint-disable-next-line no-unused-vars
 
 
 var menuListItems = [{
@@ -9103,16 +9135,14 @@ var Navigation = function Navigation(_ref) {
   var toggler = _ref.toggler,
       isOpen = _ref.isOpen;
   var menuListItemsMap = menuListItems.map(function (item) {
-    return /*#__PURE__*/react.createElement("li", {
+    return /*#__PURE__*/react.createElement(components_NavLinkItem, {
       key: item.id,
-      className: "menu__list-item"
-    }, /*#__PURE__*/react.createElement(NavLink, {
-      exact: true,
-      to: item.path,
-      className: "menu__list-link",
-      activeClassName: "menu__list-link--active",
-      onClick: toggler
-    }, item.name));
+      path: item.path,
+      name: item.name,
+      toggler: toggler,
+      classItem: "menu__list-item",
+      classLink: "menu__list-link"
+    });
   });
 
   var handleOnClickOutOfNav = function handleOnClickOutOfNav(e) {
@@ -9166,7 +9196,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // eslint-disable-next-line no-unused-vars
 
 
 
@@ -9225,7 +9254,6 @@ var Header = function Header() {
 ;// CONCATENATED MODULE: ./src/pages/Home/Home.js
 
 
- // eslint-disable-next-line no-unused-vars
 
 
 
@@ -9338,15 +9366,13 @@ var Destination = function Destination(_ref) {
     return item.name === planetName;
   });
   var menuListItemsMap = destinationData.map(function (item) {
-    return /*#__PURE__*/react.createElement("li", {
+    return /*#__PURE__*/react.createElement(components_NavLinkItem, {
       key: item.id,
-      className: "destination__menu-item"
-    }, /*#__PURE__*/react.createElement(NavLink, {
-      exact: true,
-      to: item.path,
-      activeClassName: "destination__menu-link--active",
-      className: "destination__menu-link"
-    }, item.name));
+      path: item.path,
+      name: item.name,
+      classItem: "destination__menu-item",
+      classLink: "destination__menu-link"
+    });
   });
   return /*#__PURE__*/react.createElement(react.Fragment, null, !currentPlanet ? /*#__PURE__*/react.createElement(Redirect, {
     to: "/"
@@ -9591,13 +9617,16 @@ var Technology = function Technology() {
     return item.id === currentTechID;
   });
 
+  var setCurrentOrient = function setCurrentOrient() {
+    return setIsLandscape(vpLandscape.matches);
+  };
+
   var changeCurrentTech = function changeCurrentTech(e) {
     var ID = Number(e.target.dataset.id);
     if (ID === currentTechID) return;
     setCurrentTechID(ID);
   };
 
-  console.log(vpLandscape.matches);
   var techMenuItems = technologyData.map(function (item, index) {
     return /*#__PURE__*/react.createElement("li", {
       key: item.id,
@@ -9610,9 +9639,10 @@ var Technology = function Technology() {
     }, index + 1));
   });
   (0,react.useEffect)(function () {
-    vpLandscape.addEventListener('change', function () {
-      return setIsLandscape(vpLandscape.matches);
-    });
+    vpLandscape.addEventListener('change', setCurrentOrient);
+    return function () {
+      vpLandscape.removeEventListener('change', setCurrentOrient);
+    };
   });
   return /*#__PURE__*/react.createElement("main", {
     className: "tech"
@@ -9692,7 +9722,6 @@ var Content = function Content() {
 
 
 var App = function App() {
-  console.log('work');
   return /*#__PURE__*/react.createElement(HashRouter, null, /*#__PURE__*/react.createElement(Header_Header, null), /*#__PURE__*/react.createElement(Content_Content, null));
 };
 
