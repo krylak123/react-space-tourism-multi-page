@@ -7,8 +7,7 @@ import classNames from 'classnames';
 
 import CloseOpen from '../../assets/shared/icon-close.svg';
 
-// eslint-disable-next-line no-unused-vars
-import styles from './Navigation.module.scss';
+import './Navigation.module.scss';
 
 const menuListItems = [
   {

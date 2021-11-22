@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
-// eslint-disable-next-line no-unused-vars
-import styles from './Home.module.scss';
+import './Home.module.scss';
 
 const Home = () => {
   const heading1Ref = useRef();

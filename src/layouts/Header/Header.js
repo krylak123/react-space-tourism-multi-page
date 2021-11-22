@@ -6,8 +6,7 @@ import Navigation from '../Navigation/Navigation';
 import Logo from '../../assets/shared/logo.svg';
 import OpenMenu from '../../assets/shared/icon-hamburger.svg';
 
-// eslint-disable-next-line no-unused-vars
-import styles from './Header.module.scss';
+import './Header.module.scss';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
