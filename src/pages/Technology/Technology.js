@@ -50,6 +50,8 @@ const Technology = () => {
 
   const currentTech = technologyData.find(item => item.id === currentTechID);
 
+  const setCurrentOrient = () => setIsLandscape(vpLandscape.matches);
+
   const changeCurrentTech = e => {
     const ID = Number(e.target.dataset.id);
 
@@ -74,7 +76,11 @@ const Technology = () => {
   ));
 
   useEffect(() => {
-    vpLandscape.addEventListener('change', () => setIsLandscape(vpLandscape.matches));
+    vpLandscape.addEventListener('change', setCurrentOrient);
+
+    return () => {
+      vpLandscape.removeEventListener('change', setCurrentOrient);
+    };
   });
 
   return (
