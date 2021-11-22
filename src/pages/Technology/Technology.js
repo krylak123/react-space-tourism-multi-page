@@ -58,8 +58,6 @@ const Technology = () => {
     setCurrentTechID(ID);
   };
 
-  console.log(vpLandscape.matches);
-
   const techMenuItems = technologyData.map((item, index) => (
     <li key={item.id} className="tech__menu-item">
       <button
