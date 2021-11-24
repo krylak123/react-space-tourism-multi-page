@@ -31,7 +31,7 @@ const Home = () => {
             a truly out of this world experience!
           </p>
         </div>
-        <Link to="/destination" className="home__btn">
+        <Link to="/destination/moon" className="home__btn">
           explore
         </Link>
       </div>
