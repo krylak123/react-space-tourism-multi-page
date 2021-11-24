@@ -102,7 +102,16 @@
       height: 100%;
 
       &::after {
+        opacity: 1;
+        transform: scale(0);
+        transition: 0.2s;
         height: 5px;
+      }
+
+      &--active {
+        &::after {
+          transform: scale(1);
+        }
       }
     }
   }
