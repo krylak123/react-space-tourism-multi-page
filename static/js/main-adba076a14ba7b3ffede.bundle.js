@@ -9298,7 +9298,7 @@ var Home = function Home() {
     ref: heading3Ref,
     className: "home__heading-3"
   }, "Let\u2019s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we\u2019ll give you a truly out of this world experience!")), /*#__PURE__*/react.createElement(Link, {
-    to: "/destination",
+    to: "/destination/moon",
     className: "home__btn"
   }, "explore")));
 };
